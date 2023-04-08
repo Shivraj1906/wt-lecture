@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAG</title>
+    <script>
+      const blockingCode = () => {
+        let i = 0;
+        while (i < 10000000000) i++;
+
+        return "Big task done...";
+      };
+
+      const dotask = () => {
+        const data = (document.getElementById("data").innerHTML +=
+          "clicked!<br>");
+      };
+    </script>
+  </head>
+  <body>
+    <button id="btn" onclick="blockingCode()">Click me!</button>
+    <button id="normal" onclick="dotask()">Append data</button>
+    <p id="data"></p>
+  </body>
+</html>
